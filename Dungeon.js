@@ -144,6 +144,7 @@ function move(dx, dy){
         player.x = newx;
         player.y = newy;
         trapDamage = Math.random() * 10;
+        console.log(player.hp);
         trapDamageDealt(trapDamage);
         render(dungeon);
     }
@@ -167,7 +168,7 @@ function render(dungeon){
     document.getElementById("output").innerHTML = getDungeonString(dungeon);
 }
 
-function trapDamageDealt(n) {
+function trapDamageDealt() {
     let damage = n;
     player.hp = player.hp -= damage;
     return player.hp;
