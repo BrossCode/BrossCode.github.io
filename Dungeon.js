@@ -81,6 +81,7 @@ function makeDungeon(x, y){
     makeTraps(game.traps)
     makeStairs(game.stairs)
     document.getElementById("counter").innerHTML = floorCounter;
+    document.getElementById("playerStats").innerHTML = player.hp;
 }
 
 function makeWalls(n){
