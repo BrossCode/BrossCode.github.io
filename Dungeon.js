@@ -23,19 +23,19 @@ function hello() {
         document.onkeydown = function() {
 
             if (lost == false && toggled == true) {
-                if (event.keyCode == '40') {
+                if (event.keyCode == '40' || document.getElementById("dButton").onclick) {
                     move(0, 1)
                     // down arrow
                 }
-                else if (event.keyCode == '38') {
+                else if (event.keyCode == '38' || document.getElementById("uButton").onclick) {
                     move(0, -1)
                     // up arrow
                 }
-                else if (event.keyCode == '37') {
+                else if (event.keyCode == '37' || document.getElementById("lButton").onclick) {
                     move(-1, 0)
                 // left arrow
                 }
-                else if (event.keyCode == '39') {
+                else if (event.keyCode == '39' || document.getElementById("rButton").onclick) {
                     move(1, 0)
                 // right arrow
                 }
@@ -51,18 +51,9 @@ function hello() {
                 
 
             // failstate
-                if (timeLimit < 0.1) {
-                    clearInterval(timer);
-                    console.log("You Lose");
-                    lost = true;
-                    timeLimit = 5;
-                    timePassed = 0;
-                    floorCounter = 0;
-                    toggled = false;
-                    document.getElementById("timer").innerHTML = "Restart";
-                    return lost;
+                if (timeLimit <= 0) {
+                    lostGame();
                 }
-
             }, 500);
             }
         }
@@ -143,9 +134,9 @@ function move(dx, dy){
     else if(dungeon[newx][newy].obj == GameObjects.TRAP){
         player.x = newx;
         player.y = newy;
-        trapDamage = Math.random() * 10;
-        console.log(player.hp);
+        trapDamage = Math.floor(Math.random() * 10);
         trapDamageDealt(trapDamage);
+        dungeon[newx][newy].obj = GameObjects.EMPTY;
         render(dungeon);
     }
 
@@ -171,7 +162,22 @@ function render(dungeon){
 function trapDamageDealt() {
     let damage = n;
     player.hp = player.hp -= damage;
+    if (player.hp <= 0) {
+        lostGame();
+    }
+    else {
     return player.hp;
+    }
 }
 
-// REEEEE
+function lostGame() {
+    clearInterval(timer);
+    console.log("You Lose");
+    lost = true;
+    timeLimit = 5;
+    timePassed = 0;
+    floorCounter = 0;
+    toggled = false;
+    document.getElementById("timer").innerHTML = "Restart";
+    return lost;
+}
