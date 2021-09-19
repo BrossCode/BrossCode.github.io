@@ -159,8 +159,8 @@ function render(dungeon){
     document.getElementById("output").innerHTML = getDungeonString(dungeon);
 }
 
-function trapDamageDealt(n) {
-    let damage = n;
+function trapDamageDealt(trapDamage) {
+    let damage = trapDamage;
     player.hp = player.hp -= damage;
     if (player.hp <= 0) {
         lostGame();
