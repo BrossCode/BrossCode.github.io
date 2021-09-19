@@ -72,7 +72,6 @@ function makeDungeon(x, y){
     makeTraps(game.traps)
     makeStairs(game.stairs)
     document.getElementById("counter").innerHTML = floorCounter;
-    document.getElementById("playerStats").innerHTML = player.hp;
 }
 
 function makeWalls(n){
@@ -157,6 +156,7 @@ function getDungeonString() {
 
 function render(dungeon){
     document.getElementById("output").innerHTML = getDungeonString(dungeon);
+    document.getElementById("playerStats").innerHTML = player.hp;
 }
 
 function trapDamageDealt(trapDamage) {
@@ -178,6 +178,7 @@ function lostGame() {
     timePassed = 0;
     floorCounter = 0;
     toggled = false;
+    player.hp = 50;
     document.getElementById("timer").innerHTML = "Restart";
     return lost;
 }
