@@ -173,3 +173,4 @@ function trapDamageDealt(n) {
     return player.hp;
 }
 
+// REEEEE
