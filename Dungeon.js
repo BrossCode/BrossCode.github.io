@@ -159,7 +159,7 @@ function render(dungeon){
     document.getElementById("output").innerHTML = getDungeonString(dungeon);
 }
 
-function trapDamageDealt() {
+function trapDamageDealt(n) {
     let damage = n;
     player.hp = player.hp -= damage;
     if (player.hp <= 0) {
