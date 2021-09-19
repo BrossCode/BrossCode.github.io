@@ -1,5 +1,5 @@
 var Constants = { EMPTY: "_", PLAYER: "P"}
-var GameObjects = {WALL: "W", STAIRS: "S", EMPTY: "_", ENEMY: "E", TRAP: "T"}
+var GameObjects = {WALL: "W", STAIRS: "S", EMPTY: "_", TRAP: "T"}
 var player = {x: 0, y: 0, hp: 50, atk: 0}
 var enemy = {x: 0, y:0, hp:0, atk: 0}
 var game = {w: 5, h:6, walls: 4, stairs: 1, traps: 2}
@@ -137,7 +137,6 @@ function move(dx, dy){
         timePassed = 0;
         floorCounter += 1;
         makeDungeon(game.w, game.h)
-        playerHealth(n);
         render(dungeon)
     }
     else if(dungeon[newx][newy].obj == GameObjects.TRAP){
