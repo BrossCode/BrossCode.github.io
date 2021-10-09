@@ -1,6 +1,11 @@
 function hello() {
     var fucker = new MyList();
     console.log(fucker);
+    fucker.addAtIndex(1,0);
+    fucker.addAtIndex(2,1);
+    fucker.addAtIndex(3,2);
+    fucker.addAtIndex(5,3);
+    fucker.addAtIndex(6,4);
     fucker.addAtIndex(4,2);
     fucker.deleteAtIndex(2);
 }
