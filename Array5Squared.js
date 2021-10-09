@@ -1,14 +1,14 @@
 function hello() {
-    var fucker = new MyList();
-    console.log(fucker);
-    fucker.addAtIndex(1,0);
-    fucker.addAtIndex(2,1);
-    fucker.addAtIndex(3,2);
-    fucker.addAtIndex(5,3);
-    fucker.addAtIndex(6,4);
-    fucker.addAtIndex(4,2);
-    fucker.deleteAtIndex(2);
-    fucker.addAtIndex(3,2);
+    var goldenB = new MyList();
+    console.log(goldenB);
+    goldenB.addAtIndex(1,0);
+    goldenB.addAtIndex(2,1);
+    goldenB.addAtIndex(3,2);
+    goldenB.addAtIndex(5,3);
+    goldenB.addAtIndex(6,4);
+    goldenB.addAtIndex(4,2);
+    goldenB.deleteAtIndex(2);
+    goldenB.addAtIndex(3,2);
 }
 
 function MyList() {
@@ -28,7 +28,7 @@ MyList.prototype.addAtIndex = function(value,index) {
     if (this.length == this.lengthMax) {
         console.log("Doubling Array Size...");
         // create tempory array
-        temparr = new Array(this.lengthMax*2);
+        let temparr = new Array(this.lengthMax*2);
         console.log(temparr);
         // start a loop to fill in new array with old values.
         for (let i = 0; i < this.lengthMax; i++) {
