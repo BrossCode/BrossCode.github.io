@@ -19,7 +19,7 @@ MyList.prototype.addAtIndex = function(value,index) {
     console.log(this._arr[1]);
     console.log("length: " + this.length + "Max Length: " + this.lengthMax);
     // doubles the size of the array if we are at capacity for actual values
-    if (this.length = this.lengthMax) {
+    if (this.length == this.lengthMax) {
         console.log("Doubling Array Size...");
         // create tempory array
         temparr = new Array(this.lengthMax*2);
