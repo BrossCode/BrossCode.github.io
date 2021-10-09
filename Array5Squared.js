@@ -16,6 +16,7 @@ function MyList() {
 
 MyList.prototype.addAtIndex = function(value,index) {
     console.log(this._arr);
+    console.log(this._arr[1]);
     console.log("length: " + this.length + "Max Length: " + this.lengthMax);
     // doubles the size of the array if we are at capacity for actual values
     if (this.length = this.lengthMax) {
