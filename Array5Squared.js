@@ -28,14 +28,14 @@ MyList.prototype.addAtIndex = function(value,index) {
         console.log("Doubling Array Size...");
         // create tempory array
         temparr = new Array(this.lengthMax*2);
-        console.log(temparr._arr);
+        console.log(temparr);
         // start a loop to fill in new array with old values.
         for (let i = 0; i < this.lengthMax; i++) {
             // put thing in old array in new array.
             temparr[i] = this._arr[i];
         }
         // swap out arrays
-        this._arr = temparr._arr;
+        this._arr = temparr;
         // increase the length max incase we have to expand again later.
         this.lengthMax = this.lengthMax*2;
         console.log(this._arr);
