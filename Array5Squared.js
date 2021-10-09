@@ -8,6 +8,7 @@ function hello() {
     fucker.addAtIndex(6,4);
     fucker.addAtIndex(4,2);
     fucker.deleteAtIndex(2);
+    fucker.addAtIndex(3,2);
 }
 
 function MyList() {
@@ -39,7 +40,6 @@ MyList.prototype.addAtIndex = function(value,index) {
         // increase the length max incase we have to expand again later.
         this.lengthMax = this.lengthMax*2;
         console.log(this._arr);
-        this.length += 5;
     }
     // storage
     let storage = value;
@@ -55,6 +55,7 @@ MyList.prototype.addAtIndex = function(value,index) {
     }
     // increase length of defined values in array
     console.log(this._arr);
+    this.length += 1;
 }
 
 MyList.prototype.deleteAtIndex = function(index) {
