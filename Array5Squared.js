@@ -15,6 +15,7 @@ function MyList() {
 
 MyList.prototype.addAtIndex = function(value,index) {
     console.log(this._arr);
+    console.log("length: " + this.length + "Max Length: " + this.lengthMax);
     // doubles the size of the array if we are at capacity for actual values
     if (this.length = this.lengthMax) {
         console.log("Doubling Array Size...");
@@ -36,6 +37,7 @@ MyList.prototype.addAtIndex = function(value,index) {
     let storage = value;
 
     // track if we are adding a new value to the array and increase the length.
+    console.log(this._arr[index]);
     if (this._arr[index] == undefined) {
         this.length += 1;
     }
