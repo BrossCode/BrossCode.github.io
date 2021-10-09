@@ -24,7 +24,7 @@ MyList.prototype.addAtIndex = function(value,index) {
         // start a loop to fill in new array with old values.
         for (let i = 0; i < this.lengthMax; i++) {
             // put thing in old array in new array.
-            temparr._arr[i] = this._arr[i];
+            temparr[i] = this._arr[i];
         }
         // swap out arrays
         this._arr = temparr._arr;
