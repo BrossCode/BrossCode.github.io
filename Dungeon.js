@@ -1,6 +1,6 @@
 var Constants = { EMPTY: "_", PLAYER: "P"}
 var GameObjects = {WALL: "W", STAIRS: "S", EMPTY: "_", TRAP: "T"}
-var player = {x: 0, y: 0, hp: 50, atk: 0}
+var player = {x: 0, y: 0, hp: 50, atk: 5}
 var enemy = {x: 0, y:0, hp:0, atk: 0}
 var game = {w: 5, h:6, walls: 4, stairs: 1, traps: 2}
 var dungeon = []
@@ -179,6 +179,7 @@ function lostGame() {
     floorCounter = 0;
     toggled = false;
     player.hp = 50;
+    player.atk = 5;
     document.getElementById("timer").innerHTML = "Restart";
     return lost;
 }
