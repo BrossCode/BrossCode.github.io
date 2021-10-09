@@ -57,7 +57,7 @@ MyList.prototype.addAtIndex = function(value,index) {
 
 MyList.prototype.deleteAtIndex = function(index) {
     // stop if nothing in array
-    if (this.length = 0){
+    if (this.length == 0){
         console.log("Array already empty");
     }
 
@@ -72,5 +72,6 @@ MyList.prototype.deleteAtIndex = function(index) {
         }
         // adjust length
         this.length -=1;
+        console.log(this._arr);
     }
 }
