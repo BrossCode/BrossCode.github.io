@@ -1,5 +1,6 @@
 function hello() {
     var fucker = new MyList();
+    console.log(fucker);
     fucker.addAtIndex(2,4);
     fucker.deleteAtIndex(2,4);
 }
