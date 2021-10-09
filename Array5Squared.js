@@ -1,7 +1,7 @@
 function hello() {
-    MyList();
-    addAtIndex(2,4);
-    deleteAtIndex(2,4);
+    var fucker = new MyList();
+    fucker.addAtIndex(2,4);
+    fucker.deleteAtIndex(2,4);
 }
 
 function MyList() {
