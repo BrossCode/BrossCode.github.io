@@ -39,15 +39,12 @@ MyList.prototype.addAtIndex = function(value,index) {
         // increase the length max incase we have to expand again later.
         this.lengthMax = this.lengthMax*2;
         console.log(this._arr);
+        this.length += 5;
     }
     // storage
     let storage = value;
 
     // track if we are adding a new value to the array and increase the length.
-    console.log(this._arr[index]);
-    if (this._arr[index] == undefined) {
-        this.length += 1;
-    }
 
     // now we can add at the index.
     for (let i = index; i < this.lengthMax; i++) {
