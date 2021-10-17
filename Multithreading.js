@@ -60,17 +60,17 @@ Eater.prototype.eating = function() {
     if (this.forkCount == 2) {
     // eating
     console.log(this.name + " is eating...");
-    setTimeout(this.think,1000);
+    setTimeout(this.think,100);
     }
     else {
         console.log(this.name + " Cannot get forks.");
         this.left.locked = false;
         this.right.locked = false;
-        setTimeout(this.think,1000);
+        setTimeout(this.think,100);
     }
 }
 
 Eater.prototype.think = function() {
     console.log(this.name + " is thinking...");
-    setTimeout(this.eating,1000);
+    setTimeout(this.eating,100);
 }
