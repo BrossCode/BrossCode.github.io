@@ -59,23 +59,23 @@ Eater.prototype.eating = function() {
         this.forkCount +=1;
     }
     if (this.forkCount == 2) {
-    // eating
-    console.log(this.name + " is eating...");
-    // let go after they eat
-    this.left.locked = false;
-    this.right.locked = false;
-    setTimeout(this.think,100);
+        // eating
+        console.log(this.name + " is eating...");
+        // let go after they eat
+        this.left.locked = false;
+        this.right.locked = false;
+        setTimeout(this.think.bind(this),100);
     }
     else {
         console.log(this.name + " Cannot get forks.");
         // drop em if they cant get them
         this.left.locked = false;
         this.right.locked = false;
-        setTimeout(this.think,100);
+        setTimeout(this.think.bind(this),100);
     }
 }
 
 Eater.prototype.think = function() {
     console.log(this.name + " is thinking...");
-    setTimeout(this.eating,100);
+    setTimeout(this.eating.bind(this),100);
 }
