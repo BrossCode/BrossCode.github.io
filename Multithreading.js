@@ -48,12 +48,12 @@ function Eater(name,value1,value2) {
 
 Eater.prototype.eating = function() {
     // grabbin the fork to the right
-    if (!this.next.locked) {
+    if (!this.right.locked) {
         this.right.locked = true;
         this.forkCount +=1;
     }
     // grabbin the fork to the left
-    if (!this.previous.locked) {
+    if (!this.left.locked) {
         this.left.locked = true;
         this.forkCount +=1;
     }
@@ -65,11 +65,11 @@ Eater.prototype.eating = function() {
         console.log("Cannot get forks.");
         this.left.locked = false;
         this.right.locked = false;
-        var timeoutID2 = setTimeout(think,1000);
+        setTimeout(think,1000);
     }
 }
 
 Eater.prototype.think = function() {
     console.log(this.name + " is thinking...");
-    var timeoutID1 = setTimeout(this.eating,1000);
+    setTimeout(this.eating,1000);
 }
