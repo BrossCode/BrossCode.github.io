@@ -65,7 +65,7 @@ Eater.prototype.eating = function() {
         console.log("Cannot get forks.");
         this.left.locked = false;
         this.right.locked = false;
-        setTimeout(think,1000);
+        setTimeout(this.think,1000);
     }
 }
 
