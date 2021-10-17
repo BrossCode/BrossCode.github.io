@@ -60,6 +60,7 @@ Eater.prototype.eating = function() {
     if (this.forkCount == 2) {
     // eating
     console.log(this.name + " is eating...");
+    setTimeout(this.think,1000);
     }
     else {
         console.log(this.name + " Cannot get forks.");
