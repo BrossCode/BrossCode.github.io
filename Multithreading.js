@@ -61,10 +61,14 @@ Eater.prototype.eating = function() {
     if (this.forkCount == 2) {
     // eating
     console.log(this.name + " is eating...");
+    // let go after they eat
+    this.left.locked = false;
+    this.right.locked = false;
     setTimeout(this.think,100);
     }
     else {
         console.log(this.name + " Cannot get forks.");
+        // drop em if they cant get them
         this.left.locked = false;
         this.right.locked = false;
         setTimeout(this.think,100);
