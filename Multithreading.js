@@ -47,6 +47,7 @@ function Eater(name,value1,value2) {
 }
 
 Eater.prototype.eating = function() {
+    console.log(this.name + " is attempting to eat");
     // grabbin the fork to the right
     if (!this.right.locked) {
         this.right.locked = true;
