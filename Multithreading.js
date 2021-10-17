@@ -10,17 +10,19 @@
 
 
 // only care about Eating, Eat recently, Thinking, Think recently, attempt to eat
-var array = [Fork("A"),Fork("B"),Fork("C"),Fork("D"),Fork("E")];
-var eaterArray = [Eater("Frank",array[0],array[1]),Eater("Bill",array[1],array[2]),Eater("Karl",array[2],array[3]),Eater("Tom",array[3],array[4]),];
+
 
 function hello() {
 
-document.getElementById("timer").onclick = function() {
-    eaterArray[0].eating();
-    eaterArray[1].eating();
-    eaterArray[2].eating();
-    eaterArray[3].eating();
-    eaterArray[4].eating();
+    var array = [new Fork("A"),new Fork("B"),new Fork("C"),new Fork("D"),new Fork("E")];
+    var eaterArray = [new Eater("Frank",array[0],array[1]),new Eater("Bill",array[1],array[2]),new Eater("Karl",array[2],array[3]),new Eater("Tom",array[3],array[4])];
+
+    document.getElementById("timer").onclick = function() {
+        eaterArray[0].eating();
+        eaterArray[1].eating();
+        eaterArray[2].eating();
+        eaterArray[3].eating();
+        eaterArray[4].eating();
     }
 }
 
