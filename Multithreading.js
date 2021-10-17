@@ -23,6 +23,8 @@ function hello() {
         eaterArray[2].eating();
         eaterArray[3].eating();
         eaterArray[4].eating();
+        // add counters to track number of times they have eaten
+        // will update to counter values
     }
 }
 
@@ -64,18 +66,18 @@ Eater.prototype.eating = function() {
         // let go after they eat
         this.left.locked = false;
         this.right.locked = false;
-        setTimeout(this.think.bind(this),100);
+        setTimeout(this.think.bind(this),Math.Floor(Math.random()*100));
     }
     else {
         console.log(this.name + " Cannot get forks.");
         // drop em if they cant get them
         this.left.locked = false;
         this.right.locked = false;
-        setTimeout(this.think.bind(this),100);
+        setTimeout(this.think.bind(this),Math.Floor(Math.random()*100));
     }
 }
 
 Eater.prototype.think = function() {
     console.log(this.name + " is thinking...");
-    setTimeout(this.eating.bind(this),100);
+    setTimeout(this.eating.bind(this),Math.Floor(Math.random()*100));
 }
