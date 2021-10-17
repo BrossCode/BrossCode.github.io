@@ -13,7 +13,7 @@
 var array = [Fork("A"),Fork("B"),Fork("C"),Fork("D"),Fork("E")]
 var eaterArray = [Eater("Frank",array[0],array[1]),Eater("Bill",array[1],array[2]),Eater("Karl",array[2],array[3]),Eater("Tom",array[3],array[4]),]
 
-document.getElementById("timer").onclick = function() {
+document.getElementById("timer").onclick = function hello() {
     eaterArray[0].eating();
     eaterArray[1].eating();
     eaterArray[2].eating();
