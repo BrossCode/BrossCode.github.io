@@ -15,7 +15,7 @@
 function hello() {
 
     var array = [new Fork("A"),new Fork("B"),new Fork("C"),new Fork("D"),new Fork("E")];
-    var eaterArray = [new Eater("Frank",array[0],array[1]),new Eater("Bill",array[1],array[2]),new Eater("Karl",array[2],array[3]),new Eater("Tom",array[3],array[4])];
+    var eaterArray = [new Eater("Frank",array[0],array[1]),new Eater("Bill",array[1],array[2]),new Eater("Karl",array[2],array[3]),new Eater("Tom",array[3],array[4]),new Eater("Holm",array[4],array[5])];
 
     document.getElementById("timer").onclick = function() {
         eaterArray[0].eating();
