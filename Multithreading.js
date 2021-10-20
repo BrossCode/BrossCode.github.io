@@ -55,10 +55,11 @@ function Eater(name,value1,value2) {
 Eater.prototype.eating = function() {
     if (this.starvation >= 5) {
         // nothing to see here
+        clearTimeout();
     }
-    console.log(this.name + " is attempting to eat");
     // grabbin the fork to the right
     if (!this.right.locked) {
+        console.log(this.name + " is attempting to eat");
         this.right.locked = true;
         this.forkCount +=1;
     }
