@@ -55,7 +55,7 @@ function Eater(name,value1,value2) {
 Eater.prototype.eating = function() {
     if (this.starvation >= 5) {
         // nothing to see here
-        clearTimeout();
+        clearTimeout(this.eating.bind(this));
     }
     // grabbin the fork to the right
     if (!this.right.locked) {
