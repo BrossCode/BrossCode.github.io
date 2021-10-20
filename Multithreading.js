@@ -53,7 +53,6 @@ function Eater(name,value1,value2) {
 Eater.prototype.eating = function() {
     if (this.starvation >= 5) {
         // nothing to see here
-        break;
     }
     console.log(this.name + " is attempting to eat");
     // grabbin the fork to the right
