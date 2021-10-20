@@ -52,6 +52,9 @@ function Eater(name,value1,value2) {
     this.eatCounter = 0;
 }
 
+var thinking;
+var eating;
+
 Eater.prototype.eating = function() {
     // grabbin the fork to the right
     if (!this.right.locked) {
@@ -80,12 +83,12 @@ Eater.prototype.eating = function() {
         // drop em if they cant get them
         if (this.starvation >= 5) {
             console.log(this.name + " has perished due to startvation");
-            clearTimeout(this.eating.bind(this));
+            clearTimeout(thinking);
         }
         else {
         this.left.locked = false;
         this.right.locked = false;
-        setTimeout(this.think.bind(this),Math.floor(Math.random()*100));
+        thinking = setTimeout(this.think.bind(this),Math.floor(Math.random()*100));
         }
     }
 }
