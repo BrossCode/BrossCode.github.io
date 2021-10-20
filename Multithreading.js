@@ -75,7 +75,7 @@ Eater.prototype.eating = function() {
         // let go after they eat
         this.left.locked = false;
         this.right.locked = false;
-        setTimeout(this.think.bind(this),Math.Floor(Math.random()*100));
+        setTimeout(this.think.bind(this),Math.floor(Math.random()*100));
     }
     else {
         console.log(this.name + " Cannot get forks.");
@@ -86,11 +86,11 @@ Eater.prototype.eating = function() {
         }
         this.left.locked = false;
         this.right.locked = false;
-        setTimeout(this.think.bind(this),Math.Floor(Math.random()*100));
+        setTimeout(this.think.bind(this),Math.floor(Math.random()*100));
     }
 }
 
 Eater.prototype.think = function() {
     console.log(this.name + " is thinking...");
-    setTimeout(this.eating.bind(this),Math.Floor(Math.random()*100));
+    setTimeout(this.eating.bind(this),Math.floor(Math.random()*100));
 }
