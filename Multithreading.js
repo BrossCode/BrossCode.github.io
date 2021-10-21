@@ -41,7 +41,8 @@ function Eater(name,value1,value2) {
     // name them to keep track of who is who.
     this.name = name;
     // track that we have 2 forks in hand.
-    this.forkCount = 0;
+    this.forkRight = false;
+    this.forkLeft = false;
     // counterclockwise
     this.left = value1;
     // clockwise
@@ -60,14 +61,14 @@ Eater.prototype.eating = function() {
     if (!this.right.locked) {
         console.log(this.name + " is attempting to eat");
         this.right.locked = true;
-        this.forkCount +=1;
+        this.forkRight = true;
     }
     // grabbin the fork to the left
-    if (!this.left.locked && this.forkCount == 1) {
+    if (!this.left.locked && this.forkRight == true) {
         this.left.locked = true;
-        this.forkCount +=1;
+        this.forkLeft = true;
     }
-    if (this.forkCount == 2) {
+    if (this.forkRight == true && forkLeft == true) {
         // eating
         console.log(this.name + " is eating...");
         this.eatCounter += 1;
@@ -76,7 +77,8 @@ Eater.prototype.eating = function() {
         this.left.locked = false;
         this.right.locked = false;
         this.starvation -= 1;
-        this.forkCount = 2;
+        this.forkRight = false;
+        this.forkLeft = false;
         setTimeout(this.think.bind(this),Math.floor(Math.random()*100));
     }
     else {
@@ -86,10 +88,20 @@ Eater.prototype.eating = function() {
         if (this.starvation >= 5) {
             console.log(this.name + " has perished due to startvation");
             clearTimeout(thinking);
+            if (this.forkRight == true) {
+                this.right.locked = false;
+            }
+            if (this.forkleft == true) {
+                this.left.locked = false;
+            }
         }
         else {
-        this.left.locked = false;
-        this.right.locked = false;
+            if (this.forkRight == true) {
+                this.right.locked = false;
+            }
+            if (this.forkleft == true) {
+                this.left.locked = false;
+            }
         thinking = setTimeout(this.think.bind(this),Math.floor(Math.random()*100));
         }
     }
