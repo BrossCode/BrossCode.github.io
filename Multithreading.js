@@ -49,12 +49,7 @@ function Eater(name,value1,value2) {
     this.right = value2;
     // startvation
     this.starvation = 0;
-    // number of times eat
-    this.eatCounter = 0;
 }
-
-var thinking;
-var eating;
 
 Eater.prototype.eating = function() {
     // grabbin the fork to the right
@@ -71,7 +66,6 @@ Eater.prototype.eating = function() {
     if (this.forkRight == true && this.forkLeft == true) {
         // eating
         console.log(this.name + " is eating...");
-        this.eatCounter += 1;
         document.getElementById(this.name).innerHTML = this.name + " " + this.eatCounter;
         // let go after they eat
         this.left.locked = false;
