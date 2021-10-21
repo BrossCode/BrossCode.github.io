@@ -75,6 +75,7 @@ Eater.prototype.eating = function() {
         // let go after they eat
         this.left.locked = false;
         this.right.locked = false;
+        this.starvation -= 1;
         setTimeout(this.think.bind(this),Math.floor(Math.random()*100));
     }
     else {
