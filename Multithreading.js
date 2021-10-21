@@ -76,6 +76,7 @@ Eater.prototype.eating = function() {
         this.left.locked = false;
         this.right.locked = false;
         this.starvation -= 1;
+        this.forkCount = 2;
         setTimeout(this.think.bind(this),Math.floor(Math.random()*100));
     }
     else {
