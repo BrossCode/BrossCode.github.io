@@ -68,7 +68,7 @@ Eater.prototype.eating = function() {
         this.left.locked = true;
         this.forkLeft = true;
     }
-    if (this.forkRight == true && forkLeft == true) {
+    if (this.forkRight == true && this.forkLeft == true) {
         // eating
         console.log(this.name + " is eating...");
         this.eatCounter += 1;
