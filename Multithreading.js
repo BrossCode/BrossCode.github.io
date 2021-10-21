@@ -63,7 +63,7 @@ Eater.prototype.eating = function() {
         this.forkCount +=1;
     }
     // grabbin the fork to the left
-    if (!this.left.locked) {
+    if (!this.left.locked && this.forkCount == 1) {
         this.left.locked = true;
         this.forkCount +=1;
     }
