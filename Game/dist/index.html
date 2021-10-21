@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" href="data:,">
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="whitemage.js"></script>
+    <script src="Sample.js"></script>
+    <script>
+        function entry(){
+          appEntry(document.getElementById('canvas'), window.localStorage);
+        }
+    </script>
+    <style>
+      html, body {
+        width:  100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+      #outer{
+        vertical-align: bottom;
+        position: relative;
+        height:100%;
+        display: flex;
+        justify-content: center;
+      }
+      #container{
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        display: table;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body onload="entry()" bgcolor="#666666">  
+    <div id="outer">
+        <!--<canvas id="canvas" width="1194" height="672"></canvas>-->
+        <!-- <canvas id="canvas" width="860" height="640"></canvas> -->
+        <div id="container">
+          <canvas id="canvas" width="270" height="480"></canvas>
+        </div>
+        <!-- <canvas id="canvas" width="224" height="398"></canvas> -->
+    </div>
+</body>
+</html>
