@@ -14,7 +14,7 @@ let storageLeft = arr[i];
 // rightmost
 let storageRight = arr[j];
 // pivot
-let pivot = arr[arr.length/2];
+let pivot = arr[Math.floor(arr.length/2)];
 
 function arrSort(array) {
     // compare pivot point to leftmost var
@@ -27,17 +27,21 @@ function arrSort(array) {
     if (pivot > storageLeft){
         // move over left pointer
         i += 1;
+        console.log(i);
         // change value stored
         storageLeft = array[i];
+        console.log(storageLeft);
         }
     if (pivot < storageRight){
         // move over right pointer
         j -= 1;
+        console.log(j);
         // change value stored
         storageRight = array[j];
+        console.log(storageRight);
     }
     // end command
-    if (i == array.length/2 && j == array.length/2){
+    if (i == pivot && j == pivot){
         //log it
         console.log(array);
         // return it
