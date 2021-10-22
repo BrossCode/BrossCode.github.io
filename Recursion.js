@@ -13,8 +13,10 @@ function arrSort(array) {
             storage = array[i];
             array[i] = array[i-1];
             array[i-1] = storage;
+            console.log(i);
             if (i > 0){
             i = i-1;
+            console.log(i);
             }
         }
     }
