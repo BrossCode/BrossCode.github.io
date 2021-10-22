@@ -16,20 +16,23 @@ let storageRight = arr[j];
 // pivot
 let pivot = arr[Math.floor(arr.length/2)];
 
+// gotta add a tracking array that can be changed
 function arrSort(array) {
+    // storage array
+    let tempArr = array;
     // compare pivot point to leftmost var
     // if left is higher and right is lower
     if (pivot < storageLeft && pivot > storageRight){
         // swap values since they can be flipped around pointer
-        array[i] = storageRight;
-        array[j] = storageLeft;
+        tempArr[i] = storageRight;
+        tempArr[j] = storageLeft;
     }
     if (pivot > storageLeft){
         // move over left pointer
         i += 1;
         console.log(i);
         // change value stored
-        storageLeft = array[i];
+        storageLeft = tempArr[i];
         console.log(storageLeft);
         }
     if (pivot < storageRight){
@@ -37,19 +40,23 @@ function arrSort(array) {
         j -= 1;
         console.log(j);
         // change value stored
-        storageRight = array[j];
+        storageRight = tempArr[j];
         console.log(storageRight);
     }
     // end command
     if (i == pivot && j == pivot){
         //log it
-        console.log(array);
+        console.log(tempArr);
         // return it
-        return array;
+        return tempArr;
     }
     else {
         // log it
-        console.log(array);
+        console.log(tempArr);
+        // swap it
+        array = tempArr;
+        // log again
+        console.log("next iteration array " + array);
         // call function again
         arrSort(array);
     }
