@@ -17,7 +17,7 @@ let storageRight = arr[j];
 let pivot = arr[Math.floor(arr.length/2)];
 
 // gotta add a tracking array that can be changed
-function arrSort(array) {
+document.getElementById('timer').onclick = function arrSort(array) {
     // storage array
     let tempArr = array;
     // compare pivot point to leftmost var
