@@ -13,6 +13,9 @@ function arrSort(array) {
             storage = array[i];
             array[i] = array[i-1];
             array[i-1] = storage;
+            if (i > 0){
+            i = i-1;
+            }
         }
     }
     console.log(arr);
