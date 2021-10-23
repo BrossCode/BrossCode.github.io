@@ -7,19 +7,19 @@ let storageAtValue;
 let i = 0;
 
 function hello() {
-    arrSort(arr);
+    arrSort();
 }
 
 // gotta add a tracking array that can be changed
-function arrSort(array) {
+function arrSort() {
     // setstorage to it
-    storageCurrent = array[i];
+    storageCurrent = arr[i];
     console.log(storageCurrent);
     i += 1;
     // search through the next var
     for (let j = 0; j < arr.length; j++){
         // compare storage to other var
-        if (storageCurrent > array[j]){
+        if (storageCurrent > arr[j]){
             // swap
             console.log(arr[j]);
             console.log(arr[i]);
