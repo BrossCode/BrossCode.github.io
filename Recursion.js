@@ -2,10 +2,6 @@
 
 var arr = [5,2,3,8,9,6,12,67,89,125,82];
 
-function hello() {
-    arrSort(arr);
-}
-
 // storage vars for pointers
 let i = 0;
 let j = arr.length-1;
@@ -16,6 +12,7 @@ let storageRight = arr[j];
 // pivot
 let pivot = arr[Math.floor(arr.length/2)];
 
+function hello() {
 // gotta add a tracking array that can be changed
 document.getElementById('timer').onclick = function arrSort(array) {
     // storage array
@@ -60,4 +57,5 @@ document.getElementById('timer').onclick = function arrSort(array) {
         // call function again
         arrSort(array);
     }
+}
 }
