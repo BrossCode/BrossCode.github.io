@@ -15,15 +15,18 @@ function arrSort(array) {
     for (let i = 0; i < arr.length; i++){
         // setstorage to it
         storageCurrent = array[i];
+        console.log(storageCurrent);
         // search through the next var
         for (let j = 0; j < arr.length; j++){
             // compare storage to other var
             if (storageCurrent > array[j]){
                 // swap
+                console.log(arr[j]);
                 arr[i] = arr[j];
                 arr[j] = storageCurrent;
             }
         }
     }
+    console.log(arr);
     arrSort(arr);
 }
