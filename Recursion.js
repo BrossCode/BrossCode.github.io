@@ -22,6 +22,7 @@ function arrSort(array) {
             if (storageCurrent > array[j]){
                 // swap
                 console.log(arr[j]);
+                console.log(arr[i]);
                 arr[i] = arr[j];
                 arr[j] = storageCurrent;
             }
