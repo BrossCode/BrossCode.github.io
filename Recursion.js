@@ -3,7 +3,7 @@
 var arr = [5,2,3,8,9,6,12,67,89,125,82];
 
 let storageCurrent;
-let storageAtValue;
+let storageAtValue = 0;
 let i = 0;
 
 function hello() {
