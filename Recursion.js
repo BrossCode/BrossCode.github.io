@@ -11,9 +11,9 @@ function hello() {
 }
 
 // gotta add a tracking array that can be changed
-function arrSort() {
+function arrSort(array) {
     // setstorage to it
-    storageCurrent = arr[i];
+    storageCurrent = array[i];
     console.log(storageCurrent);
     i += 1;
     // search through the next var
