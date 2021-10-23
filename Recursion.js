@@ -39,6 +39,7 @@ function maxValue() {
         storageAtValue = storageCurrent;
     }
     if (storageAtValue == tracker){
+        console.log("exiting...")
         return storageAtValue;
     }
     console.log(storageAtValue);
