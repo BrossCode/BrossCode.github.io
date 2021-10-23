@@ -26,6 +26,15 @@ function arrSort(array) {
         // swap values since they can be flipped around pointer
         tempArr[i] = storageRight;
         tempArr[j] = storageLeft;
+
+        // log it
+        console.log(tempArr);
+        // swap it
+        array = tempArr;
+        // log again
+        console.log("next iteration array " + array);
+        // call function again
+        arrSort(array);
     }
     if (pivot > storageLeft){
         // move over left pointer
