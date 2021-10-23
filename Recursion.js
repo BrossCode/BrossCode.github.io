@@ -32,10 +32,9 @@ function arrSort() {
 
 function maxValue() {
     storageCurrent = arr[i];
-    let tracker = storageCurrent;
     i += 1;
     if (storageCurrent > storageAtValue){
-        tracker = storageCurrent;
+        let tracker = storageCurrent;
         storageAtValue = storageCurrent;
     }
     if (storageAtValue == tracker){
