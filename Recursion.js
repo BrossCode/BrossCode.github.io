@@ -7,7 +7,7 @@ let storageAtValue;
 let i = 0;
 
 function hello() {
-    arrSort();
+    maxValue();
 }
 
 // gotta add a tracking array that can be changed
@@ -28,4 +28,14 @@ function arrSort() {
     }
     console.log(arr);
     arrSort(arr);
+}
+
+function maxValue() {
+    storageCurrent = arr[i];
+    i += 1;
+    if (storageCurrent > storageAtValue){
+        storageAtValue = storageCurrent;
+    }
+    console.log(storageAtValue);
+    maxValue();
 }
