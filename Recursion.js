@@ -22,6 +22,8 @@ function arrSort(array) {
     let tempArr = array;
     console.log(tempArr);
     console.log(pivot);
+    console.log(storageLeft);
+    console.log(storageRight);
     // compare pivot point to leftmost var
     // if left is higher and right is lower
     if (pivot < storageLeft && pivot > storageRight){
