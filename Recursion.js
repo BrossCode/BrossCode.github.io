@@ -1,13 +1,15 @@
 // Recursion
 
 var arr = [5,2,3,8,9,6,12,67,89,125,82];
+var a = 10;
+var b = 25;
 
 let storageCurrent;
 let storageAtValue = 0;
 let i = 0;
 
 function hello() {
-    maxValue();
+    gcd_rec(a,b);
 }
 
 // gotta add a tracking array that can be changed
@@ -32,7 +34,6 @@ function arrSort() {
 
 function maxValue() {
     storageCurrent = arr[i];
-    let tracker = arr[i-1];
     i += 1;
     if (storageCurrent > storageAtValue){
         storageAtValue = storageCurrent;
@@ -45,3 +46,21 @@ function maxValue() {
     maxValue();
 }
 
+function printArray() {
+    console.log(arr[i]);
+    i += 1;
+    if (i == arr.length - 1){
+        break;
+    }
+    else {
+        printArray();
+    }
+}
+
+function gcd_rec(a, b) {
+    if (b) {
+        return gcd_rec(b, a % b);
+    } else {
+        return Math.abs(a);
+    }
+}
