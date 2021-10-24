@@ -9,7 +9,7 @@ let storageAtValue = 0;
 let i = 0;
 
 function hello() {
-    gcd_rec(a,b);
+    gcd(a,b);
 }
 
 // gotta add a tracking array that can be changed
@@ -50,17 +50,44 @@ function printArray() {
     console.log(arr[i]);
     i += 1;
     if (i == arr.length - 1){
-        break;
+        return;
     }
     else {
         printArray();
     }
 }
 
-function gcd_rec(a, b) {
-    if (b) {
-        return gcd_rec(b, a % b);
-    } else {
-        return Math.abs(a);
+function gcd(a, b)
+{
+    // Everything divides 0
+    if (a == 0){
+    return b;
+    }
+
+    if (b == 0){
+    return a;
+    }
+
+    // base case
+    if (a == b) {
+        return a;
+    }
+
+    // a is greater
+    if (a > b) {
+        return gcd(a-b, b);
+    }
+    return gcd(a, b-a);
+}
+
+function iterativeGcd(a,b){
+    if (a > b){
+        for (let i = b; i > 0; i--){
+            if (a % i == 0){
+                if (b % i == 0){
+                    return i;
+                }
+            }
+        }
     }
 }
