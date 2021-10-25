@@ -11,6 +11,7 @@ let i = 0;
 
 function hello() {
     console.log(gcd(a,b));
+    reverseString(string,null,string.length);
 }
 
 // gotta add a tracking array that can be changed
