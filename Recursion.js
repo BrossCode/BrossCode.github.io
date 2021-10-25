@@ -63,8 +63,7 @@ function gcd(a,b,i){
         return i;
     }
     else {
-        i -= 1;
-        return gcd(a,b,i-1);
+        return gcd(a,b,i+1);
     }
 }
 
