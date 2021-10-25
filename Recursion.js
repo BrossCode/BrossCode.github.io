@@ -10,7 +10,7 @@ let storageAtValue = 0;
 let i = 0;
 
 function hello() {
-    gcd(a,b);
+    console.log(gcd(a,b));
 }
 
 // gotta add a tracking array that can be changed
