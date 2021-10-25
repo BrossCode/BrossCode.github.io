@@ -10,7 +10,7 @@ let storageAtValue = 0;
 let i = 0;
 
 function hello() {
-    gcd(a,b);
+    gcd(a,b,0);
 }
 
 // gotta add a tracking array that can be changed
