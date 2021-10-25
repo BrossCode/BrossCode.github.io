@@ -1,8 +1,9 @@
 // Recursion
 
 var arr = [5,2,3,8,9,6,12,67,89,125,82];
-var a = 10;
-var b = 25;
+var a = 16;
+var b = 80;
+var string = "hello";
 
 let storageCurrent;
 let storageAtValue = 0;
@@ -109,7 +110,31 @@ BinarySearchTree.prototype.insert = function(data) {
 
     // iteration time pogchamp
     else {
-        
-        this.insertNode(node.left,newNode);
+        // calling another prototype insert function
+        // checking left and right with recursion
+        this.insertNode(this.root,newNode);
+    }
+}
+
+BinarySearchTree.prototype.insertNode = function() {
+    if (newNode.data < node.data) {
+        // check left for null
+        if (node.left == null) {
+
+        }
+        else {
+            // if left node is not null, recur until a null is found
+            this.insertNode(node.left, newNode);
+        }
+    }
+    else {
+        // check right for null
+        if (node.right == null) {
+            node.right = newNode;
+        }
+        else {
+            // recur until it is found
+            this.insertNode(node.right, newNode);
+        }
     }
 }
