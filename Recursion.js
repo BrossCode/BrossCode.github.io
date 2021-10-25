@@ -58,6 +58,7 @@ function printArray(array) {
 }
 
 function gcd(a,b,i){
+    console.log(i);
     if (a % i == 0 && b % i == 0){
         return i;
     }
@@ -76,6 +77,7 @@ function iterativeGcd(a,b){
 }
 
 function reverseString(s,r,i){
+    console.log(reversed);
     let reversed;
     r = s.charAt(i);
     i -= 1;
