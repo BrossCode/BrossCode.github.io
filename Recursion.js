@@ -24,7 +24,7 @@ function arrSort() {
                 // swap
                 arr[i] = arr[j];
                 arr[j] = storageCurrent;
-                break;
+                return;
             }
         }
     }
@@ -40,54 +40,76 @@ function maxValue() {
     }
     if (storageAtValue == tracker){
         console.log("exiting...")
-        return storageAtValue;
+        return;
     }
     console.log(storageAtValue);
     maxValue();
 }
 
-function printArray() {
-    console.log(arr[i]);
-    i += 1;
-    if (i == arr.length - 1){
+function printArray(array) {
+    if(array.length == 0){
         return;
     }
-    else {
-        printArray();
-    }
+    // base case
+    let firstItem = array.shift();
+    console.log(firstItem);
+    printArray(array);
 }
 
-function gcd(a, b)
-{
-    // Everything divides 0
-    if (a == 0){
-    return b;
+function gcd(a,b,i){
+    if (a % i == 0 && b % i == 0){
+        return i;
     }
-
-    if (b == 0){
-    return a;
+    else {
+        i -= 1;
+        return gcd(a,b,i-1);
     }
-
-    // base case
-    if (a == b) {
-        return a;
-    }
-
-    // a is greater
-    if (a > b) {
-        return gcd(a-b, b);
-    }
-    return gcd(a, b-a);
 }
 
 function iterativeGcd(a,b){
-    if (a > b){
-        for (let i = b; i > 0; i--){
-            if (a % i == 0){
-                if (b % i == 0){
-                    return i;
-                }
-            }
+    for (let i = Math.min(a,b); i > 0; i--){
+        if (a % i == 0 && b % i == 0){
+                return i;
         }
+    }
+}
+
+function reverseString(s,r,i){
+    let reversed;
+    r = s.charAt(i);
+    i -= 1;
+    reversed += r;
+    if (i == 0){
+        return;
+    }
+    else {
+        reverseString(s,r,i);
+    }
+}
+
+let Node = function(data){
+        this.data = data;
+        this.left = null;
+        this.right = null;
+}
+
+let BinarySearchTree = function(){
+        // root of the tree
+        this.root = null;
+}
+
+BinarySearchTree.prototype.insert = function(data) {
+    // create a node
+    var newNode = new Node(data);
+
+    // linkedlist things
+    if (this.root == null) {
+        this.root = newNode;
+    }
+
+    // iteration time pogchamp
+    else {
+        
+        this.insertNode(node.left,newNode);
     }
 }
