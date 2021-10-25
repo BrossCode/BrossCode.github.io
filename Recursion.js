@@ -10,7 +10,7 @@ let storageAtValue = 0;
 let i = 0;
 
 function hello() {
-    gcd(a,b,0);
+    gcd(a,b);
 }
 
 // gotta add a tracking array that can be changed
@@ -57,13 +57,12 @@ function printArray(array) {
     printArray(array);
 }
 
-function gcd(a,b,i){
-    console.log(i);
-    if (a % i == 0 && b % i == 0){
-        return i;
+function gcd(a,b){
+    if (b == 0){
+        return a;
     }
-    else {
-        return gcd(a,b,i+1);
+    else{
+        return gcd(b, a % b);
     }
 }
 
