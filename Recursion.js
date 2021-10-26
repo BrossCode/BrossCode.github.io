@@ -84,7 +84,7 @@ function reverseString(s,i){
     + s.charAt(s.length-1-i) 
     + s.substring(i+1, s.length-1-i) 
     + s.charAt(i) 
-    + s.substring(s.length-1-i);
+    + s.substring(s.length-i);
     console.log(s);
     // increase i
     i++;
