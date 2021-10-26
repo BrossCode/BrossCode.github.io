@@ -78,6 +78,7 @@ function reverseString(s,i){
     // take in letter at i
     let r;
     r += s.charAt(s.length-i);
+    console.log(r);
     // increase i
     i++;
     // if we reach the end
