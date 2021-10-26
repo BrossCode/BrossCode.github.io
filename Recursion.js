@@ -76,9 +76,8 @@ function iterativeGcd(a,b){
 
 function reverseString(s,i){
     // take in letter at i
-    let r = s.charAt(s.length-i);
-    // swap letter
-    string.charAt(s.length) = s.charAt(i); 
+    let r = r;
+    r += s.charAt(s.length-i);
     // reduce i since working backwards
     i++;
     // if we reach the end
