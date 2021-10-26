@@ -73,22 +73,19 @@ function iterativeGcd(a,b){
         }
     }
 }
-function reverseString(s,i,r){
-    if (r == null){
-        let r = ""
-    }
+
+function reverseString(s,i){
     // take in letter at i
-    r += s.charAt(s.length-i);
-    console.log(r);
+    s = s.substring(0, i) + s.charAt(s.length-1-i) + s.substring(i+1, s.length-1-i-1) + s.charAt(i) + s.substring(s.length-1-i);
     // increase i
     i++;
     // if we reach the end
-    if (i == string.length){
-        return r;
+    if (i == string.length/2){
+        return s;
     }
     // otherwise call again
     else {
-        reverseString(s,i,r);
+        reverseString(s,i);
     }
 }
 
