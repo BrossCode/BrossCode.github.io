@@ -73,8 +73,10 @@ function iterativeGcd(a,b){
         }
     }
 }
-let r;
-function reverseString(s,i){
+function reverseString(s,i,r){
+    if (!r){
+        let r = ""
+    }
     // take in letter at i
     r += s.charAt(s.length-i);
     console.log(r);
@@ -86,7 +88,7 @@ function reverseString(s,i){
     }
     // otherwise call again
     else {
-        reverseString(s,i);
+        reverseString(s,i,r);
     }
 }
 
