@@ -74,9 +74,8 @@ function iterativeGcd(a,b){
     }
 }
 
+let r;
 function reverseString(s,i){
-    // initialize?
-    let r;
     // log
     console.log(r);
     // take in string
