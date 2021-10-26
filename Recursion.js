@@ -78,10 +78,10 @@ function reverseString(s,i){
     // take in letter at i
     let r;
     r += s.charAt(s.length-i);
-    // reduce i since working backwards
+    // increase i
     i++;
     // if we reach the end
-    if (i == string.length/2){
+    if (i == string.length){
         return r;
     }
     // otherwise call again
