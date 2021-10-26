@@ -82,7 +82,7 @@ function reverseString(s,i){
     i++;
     // if we reach the end
     if (i == string.length/2){
-        return;
+        return r;
     }
     // otherwise call again
     else {
