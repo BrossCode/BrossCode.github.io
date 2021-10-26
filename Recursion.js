@@ -82,7 +82,7 @@ function reverseString(s,i){
     s = 
     s.substring(0, i) 
     + s.charAt(s.length-1-i) 
-    + s.substring(i+1, s.length-1-i-1) 
+    + s.substring(i+1, s.length-1-i) 
     + s.charAt(i) 
     + s.substring(s.length-1-i);
     console.log(s);
