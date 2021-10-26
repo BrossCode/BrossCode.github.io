@@ -78,7 +78,7 @@ function reverseString(s,i){
     // take in letter at i
     let r = s.charAt(s.length-i);
     // swap letter
-    s.charAt(s.length) = s.charAt(i); 
+    string.charAt(s.length) = s.charAt(i); 
     // reduce i since working backwards
     i++;
     // if we reach the end
