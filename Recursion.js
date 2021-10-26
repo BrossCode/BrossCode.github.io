@@ -10,7 +10,7 @@ let storageAtValue = 0;
 let i = 0;
 
 function hello() {
-    reverseString(string,0);
+    recursiveSwap(string,0);
 }
 
 // gotta add a tracking array that can be changed
@@ -72,6 +72,21 @@ function iterativeGcd(a,b){
                 return i;
         }
     }
+}
+
+function recursiveSwap(s, i){
+    // Base case
+    if(i >= s.length/2) return s;
+
+    // Else swap
+    let o =
+    s.substring(0, i) + // pre i
+    s.charAt(s.length-1-i) + // swap 1
+    s.substring(i+1, s.length-1-i) + // middle
+    s.charAt(i) + // swap 2
+    s.substring(s.length-i); // post i
+
+    return recursiveSwap(o, i+1);
 }
 
 function reverseString(s,i){
