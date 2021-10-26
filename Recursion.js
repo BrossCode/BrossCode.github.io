@@ -74,7 +74,7 @@ function iterativeGcd(a,b){
     }
 }
 function reverseString(s,i,r){
-    if (!r){
+    if (r == undefined){
         let r = ""
     }
     // take in letter at i
