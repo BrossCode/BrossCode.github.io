@@ -76,7 +76,7 @@ function iterativeGcd(a,b){
 
 function recursiveSwap(s, i){
     // Base case
-    if(i >= s.length/2) return s;
+    if(i == Math.floor(s.length/2)) return s;
 
     // Else swap
     let o =
@@ -90,7 +90,7 @@ function recursiveSwap(s, i){
 }
 
 function reverseString(s,i){
-    if (i >= s.length/2){
+    if (i == Math.floor(s.length/2)){
         return s;
     }
     // take in letter at i
