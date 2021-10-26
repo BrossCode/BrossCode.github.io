@@ -87,10 +87,9 @@ function reverseString(s,i){
     + s.substring(s.length-i);
     console.log(s);
     // increase i
-    i++;
     // if we reach the end
     // otherwise call again
-    return reverseString(s,i);
+    return reverseString(s,i+1);
 }
 
 let Node = function(data){
