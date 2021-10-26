@@ -157,3 +157,28 @@ BinarySearchTree.prototype.insertNode = function() {
         }
     }
 }
+
+BinarySearchTree.prototype.searchNodes = function(value) {
+
+    let searchNode = value;
+
+// search for a node with given data
+   // if trees is empty return null
+    if(node === null)
+        return null;
+ 
+    // if data is less than node's data
+    // move left
+    else if(data < node.data)
+        return this.search(node.left, data);
+ 
+    // if data is less than node's data
+    // move left
+    else if(data > node.data)
+        return this.search(node.right, data);
+ 
+    // if data is equal to the node data
+    // return node
+    else
+        return node;
+}
