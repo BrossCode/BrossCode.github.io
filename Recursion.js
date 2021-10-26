@@ -10,7 +10,7 @@ let storageAtValue = 0;
 let i = 0;
 
 function hello() {
-    reverseString(string,string.length);
+    reverseString(string,0);
 }
 
 // gotta add a tracking array that can be changed
@@ -74,16 +74,15 @@ function iterativeGcd(a,b){
     }
 }
 
-let r = "";
 function reverseString(s,i){
-    // log
-    console.log(r);
-    // take in string
-    r += s.charAt(i);
+    // take in letter at i
+    let r = s.charAt(0);
+    // swap letter
+    s.charAt(s.length-i) = s.charAt(i); 
     // reduce i since working backwards
-    i -= 1;
+    i++;
     // if we reach the end
-    if (i < 0){
+    if (i == string.length/2){
         return;
     }
     // otherwise call again
