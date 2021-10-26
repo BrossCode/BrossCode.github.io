@@ -74,7 +74,7 @@ function iterativeGcd(a,b){
     }
 }
 
-let r;
+let r = "";
 function reverseString(s,i){
     // log
     console.log(r);
@@ -83,7 +83,7 @@ function reverseString(s,i){
     // reduce i since working backwards
     i -= 1;
     // if we reach the end
-    if (i == 0){
+    if (i < 0){
         return;
     }
     // otherwise call again
