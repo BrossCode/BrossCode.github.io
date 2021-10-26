@@ -75,7 +75,7 @@ function iterativeGcd(a,b){
 }
 
 function reverseString(s,i){
-    if (i == string.length/2){
+    if (i == s.length/2){
         return s;
     }
     // take in letter at i
