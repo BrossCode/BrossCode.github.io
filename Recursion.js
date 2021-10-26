@@ -79,7 +79,7 @@ function reverseString(s,i){
         return s;
     }
     // take in letter at i
-    s = s.substring(0, i) + s.charAt(s.length-1-i) + s.substring(i+1, s.length-1-i-1) + s.substring(s.length-1-i) + s.charAt(i);
+    s = s.substring(0, i) + s.charAt(s.length-1-i) + s.substring(i+1, s.length-1-i-1) + s.charAt(i) + s.substring(s.length-1-i,s.length-1);
     console.log(s);
     // increase i
     i++;
