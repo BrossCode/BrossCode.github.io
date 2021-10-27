@@ -1,50 +1,76 @@
 // Recursion
 
-var arr = [5,2,3,8,9,6,12,67,89,125,82];
-var a = 28;
-var b = 80;
-var string = "hello";
-
-let storageCurrent;
-let storageAtValue = 0;
-let i = 0;
 
 function hello() {
-    reverseString(string,0);
+    console.log("arrSort:");
+    arrSort([0,25,63,57,43],0);
+    arrSort([1,4,4,6,7,8,8,8],0);
+    arrSort([102844,540892,999234,106601,230242,922322],0);
+
+    console.log("maxValue:");
+    maxValue([5,98,323,6,9292,7,434,821],0,0);
+    maxValue([1,1,1,1,1,1,1,1,1,1,1],0,0);
+    maxValue([53345,43545,13213,43656,86686,96767],0,0);
+
+    console.log("printArray:");
+    printArray([13213,23333,2,1,"hey","printing!","oh god look at all this print"]);
+    printArray([32,3213,.2323,4324.32,""]);
+
+    console.log("gcd:");
+    gcd(35,81);
+    gcd(333,999);
+    gcd(4,4);
+    gcd(0,0);
+    gcd(0,6);
+    gcd(121,0);
+    gcd(21,69);
+
+    console.log("recursiveReverse:");
+    recursiveReverse("hello",0);
+    recursiveReverse("ungabunga",0);
+    recursiveReverse("oof some spaces",0);
+    recursiveReverse("lets add some 123",0);
+
+
 }
 
-// gotta add a tracking array that can be changed
-function arrSort() {
-    for (let i = 0; i < arr.length; i++){
+function arrSort(array,runs) {
+    for (let i = 0; i < array.length-1; i++){
         // setstorage to it
-        storageCurrent = arr[i];
+        let storageCurrent = array[i];
         // search through the next var
-        for (let j = 0; j < arr.length; j++){
+        for (let j = array.length-1; j > 0; j--){
             // compare storage to other var
-            if (storageCurrent > arr[j]){
+            if (storageCurrent > array[j]){
                 // swap
-                arr[i] = arr[j];
-                arr[j] = storageCurrent;
-                return;
+                let swap = array[j];
+                array[i] = swap;
+                array[j] = storageCurrent;
+                // is that brute force I spy?
+                storageCurrent = 0;
+                i = array.length;
+                j = 0;
             }
         }
     }
-    console.log(arr);
-    arrSort(arr);
+    if (runs == array.length-1){
+        return;
+    }
+    console.log(array);
+    arrSort(array,runs+1);
 }
 
-function maxValue() {
-    storageCurrent = arr[i];
-    i += 1;
+function maxValue(array,i,n) {
+    let storageCurrent = array[i];
+    let storageAtValue = n;
     if (storageCurrent > storageAtValue){
         storageAtValue = storageCurrent;
     }
-    if (storageAtValue == tracker){
+    if (i == array.length-1){
         console.log("exiting...")
-        return;
+        return storageAtValue;
     }
-    console.log(storageAtValue);
-    maxValue();
+    return maxValue(array,i+1,storageAtValue);
 }
 
 function printArray(array) {
@@ -66,119 +92,21 @@ function gcd(a,b){
     }
 }
 
-function iterativeGcd(a,b){
-    for (let i = Math.min(a,b); i > 0; i--){
-        if (a % i == 0 && b % i == 0){
-                return i;
-        }
-    }
-}
-
-function recursiveSwap(s, i){
+function recursiveReverse(s, count){
     // Base case
-    if(i == Math.floor(s.length/2)) return s;
+    let i = count;
+    if(i == Math.floor(s.length/2)) {
+        return s;
+    }
 
     // Else swap
-    let o =
+    let r =
     s.substring(0, i) + // pre i
     s.charAt(s.length-1-i) + // swap 1
     s.substring(i+1, s.length-1-i) + // middle
     s.charAt(i) + // swap 2
     s.substring(s.length-i); // post i
+    console.log(r);
 
-    return recursiveSwap(o, i+1);
-}
-
-function reverseString(s,i){
-    if (i == Math.floor(s.length/2)){
-        return s;
-    }
-    // take in letter at i
-    s = 
-    s.substring(0, i) 
-    + s.charAt(s.length-1-i) 
-    + s.substring(i+1, s.length-1-i) 
-    + s.charAt(i) 
-    + s.substring(s.length-i);
-    console.log(s);
-    // increase i
-    // if we reach the end
-    // otherwise call again
-    return reverseString(s,i+1);
-}
-
-let Node = function(data){
-        this.data = data;
-        this.left = null;
-        this.right = null;
-}
-
-let BinarySearchTree = function(){
-        // root of the tree
-        this.root = null;
-}
-
-BinarySearchTree.prototype.insert = function(data) {
-    // create a node
-    var newNode = new Node(data);
-
-    // linkedlist things
-    if (this.root == null) {
-        this.root = newNode;
-    }
-
-    // iteration time pogchamp
-    else {
-        // calling another prototype insert function
-        // checking left and right with recursion
-        this.insertNode(this.root,newNode);
-    }
-}
-
-BinarySearchTree.prototype.insertNode = function() {
-    if (newNode.data < node.data) {
-        // check left for null
-        if (node.left == null) {
-
-        }
-        else {
-            // if left node is not null, recur until a null is found
-            this.insertNode(node.left, newNode);
-        }
-    }
-    else {
-        // check right for null
-        if (node.right == null) {
-            node.right = newNode;
-        }
-        else {
-            // recur until it is found
-            this.insertNode(node.right, newNode);
-        }
-    }
-}
-
-BinarySearchTree.prototype.searchNodes = function(value) {
-
-    let searchNode = value;
-
-// search for a node with given data
-   // if trees is empty return null
-    if(node === null)
-        return null;
- 
-    // if data is less than node's data
-    // move left
-    else if(data < node.data)
-        return this.search(node.left, data);
- 
-    // if data is less than node's data
-    // move left
-    else if(data > node.data)
-        return this.search(node.right, data);
- 
-    // if data is equal to the node data
-    // return node
-    else
-        return node;
+    return recursiveReverse(r, i+1);
 }
