@@ -2,14 +2,6 @@
 <html>
 <head>
     <style>
-        div {
-            display:inline-block;
-            cursor:pointer;
-            padding: 12px;
-            text-align: center;
-            user-select: none;
-            font-family: monospace;
-        }
     </style>
 </head>
 <body>
@@ -33,11 +25,8 @@ if(isset($_POST['submit'])) {
     echo "You Have Clicked Submit." ."<br>";
     sampleFunction();
 }
-
-function sampleFunction(){
-    $name = ($_POST["name"]);
-    // allows access to global with the keyword
-    echo "You are: " .($_POST["name"]);
+else{
+    echo "Hello, John Doe. I say this because I don't know your name!";
 }
 
 ?> 
